@@ -1,102 +1,199 @@
 @font-face {
-  font-family: "skreen";
-  src: url("/resources/skreen-regular.woff2") format("woff"),
-    url("/resources/skreen-regular.woff2") format("woff2");
-  font-weight: regular;
-  font-style: normal;
-  font-display: swap;
+	font-family: "skreen";
+	src: url("/resources/skreen-regular.woff2") format("woff"),
+		url("/resources/skreen-regular.woff2") format("woff2");
+	font-weight: regular;
+	font-style: normal;
+	font-display: swap;
 }
 
 body {
-  background-color: #dfdfdf;
-  margin: 0px;
+	background-color: #dfdfdf;
+	margin: 0px;
+	font-family: skreen, geneva, arial, sans-serif;
+	font-size: 9px;
+	line-height: 14px;
+	text-rendering: geometricPrecision;
+}
+
+body-container {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	width: 210px;
+	margin: 6px auto;
 }
 
 img {
-  border: 0px none;
+	border: none;
+	display: block;
+	image-rendering: pixelated;
 }
 
-.ac {
-  font-family: skreen, geneva, arial, sans-serif;
-  font-size: 9px;
-  margin: 4px;
+titchy-strap {
+	border: 1px dotted black;
+	border-image-source: url(i/dots.png);
+	border-image-width: 1px;
+	border-image-repeat: repeat;
+	image-rendering: pixelated;
+	border-image-slice: 1;
+	text-transform: uppercase;
+	padding: 2px;
+	line-height: 1;
+	text-align: center;
+}
+
+main {
+	border: 3px double black;
+	/* background-image: url("i/ab_footer.gif");
+	background-repeat: no-repeat;
+	background-position: bottom;
+	background-size: 210px 13px; */
+	border-image-source: url(i/page-border.png);
+	border-image-width: 3px;
+	border-image-repeat: repeat;
+	image-rendering: pixelated;
+	border-image-slice: 3;
+}
+main:after {
+	display: block;
+	content: "©2000 TITCHYMAFIA";
+	text-align: right;
+	line-height: 1;
+	border-top: 1px solid black;
+	color: #666;
+	background: #ccc;
+	padding: 1px;
+}
+.page {
+	padding: 4px;
+}
+.minimalism {
+	padding-bottom: 0;
+}
+.minimalism img {
+	display: block;
+	margin-left: auto;
 }
 
 .abmargin {
-  background-image: url(i/ab_margin.gif);
-  background-repeat: repeat-y;
-  margin: 0px;
-  padding: 0px;
-  width: 3px;
+	background-image: url(i/ab_margin.gif);
+	background-repeat: repeat-y;
+	margin: 0px;
+	padding: 0px;
+	width: 3px;
 }
 
 a {
-  color: #600;
-  text-decoration: none;
+	color: #600;
+	text-decoration: none;
 }
 
 a:hover {
-  color: #900;
-  text-decoration: underline;
+	color: #900;
+	text-decoration: underline;
 }
 
 .author {
-  font-variant: small-caps;
+	font-variant: small-caps;
 }
 
 .pagebreak {
 }
 
 .para {
-  text-indent: 20px;
+	text-indent: 20px;
 }
 .pull {
-  background-color: #ccc;
-  border-top: 1px dotted black;
+	background-color: #ccc;
+	border-top: 1px dotted black;
 }
 
-select {
-  color: #666;
-  font-size: 9px;
-  line-height: 9px;
-  font-family: skreen, geneva, arial, sans-serif;
-  background-color: #ccc;
-  margin: 0px;
-  padding: 0px;
-  border: 0px;
-  width: 204px;
-  height: 12px;
-  outline: 0px;
-}
-
-:focus {
-  outline: 0px;
-}
-
-form {
-  margin: 0px;
-  padding: 0px;
-  border: 0px;
-}
-
-option {
-  margin: 0px;
-  padding: 0px;
-  border: 0px;
-}
 #shortclub {
-  text-align: justify;
+	text-align: justify;
 }
 
 .blog {
-  font-size: 9px;
-  background-color: white;
-  padding: 4px;
-  border-right: 1px dotted black;
-  border-left: 1px dotted black;
+	font-size: 9px;
+	background-color: white;
+	padding: 4px;
+	border-right: 1px dotted black;
+	border-left: 1px dotted black;
 }
 .blogdetails {
-  color: #888;
-  line-height: 9px;
-  text-align: center;
+	color: #888;
+	line-height: 9px;
+	text-align: center;
+}
+
+.strap {
+	object-fit: cover;
+	object-position: 0px 0px;
+}
+
+titchy-link a {
+	display: block;
+	height: 15px;
+	background-image: url(i/arrows.png);
+	image-rendering: pixelated;
+	background-repeat: no-repeat;
+	text-indent: 20px;
+	overflow: hidden;
+	color: transparent;
+	text-transform: uppercase;
+	text-decoration: none;
+	transition: color 0s;
+	transition-delay: 0s;
+	cursor: pointer;
+}
+titchy-link a:hover {
+	text-decoration: none;
+	transition-delay: 0.25s;
+	color: white;
+}
+
+h1 {
+	font-size: 9px;
+	font-weight: normal;
+	line-height: 9px;
+	text-transform: uppercase;
+	border-image-source: url(i/dots.png);
+	border-image-width: 1px 1px 0 1px;
+	border-image-repeat: repeat;
+	image-rendering: pixelated;
+	border-image-slice: 1;
+	margin: 0;
+	margin-bottom: -6px;
+	border-bottom-width: 0;
+	padding: 3px 0 3px 20px;
+	position: relative;
+}
+h1:before {
+	content: " ";
+	display: block;
+	position: absolute;
+	width: 1px;
+	top: 1px;
+	bottom: 1px;
+	left: 15px;
+	background-image: url(i/dots.png);
+	image-rendering: pixelated;
+	background-repeat: repeat;
+}
+h1:after {
+	content: " ";
+	display: block;
+	position: absolute;
+	width: 15px;
+	top: 0;
+	bottom: -1px;
+	right: 0;
+	border: 1px solid black;
+	background-color: white;
+	border-bottom: none;
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAYAAAD0In+KAAAAAXNSR0IArs4c6QAAABFJREFUGFdjZGBg+M/AwMAIAAUOAQLHCKYWAAAAAElFTkSuQmCC");
+	image-rendering: pixelated;
+	background-repeat: repeat-x;
+	background-size: 2px 1px;
+	background-position: 0 bottom;
 }
